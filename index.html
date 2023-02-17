@@ -5,62 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel = "stylesheet" href = "styles.css">
 </head>
 <body>
-    <script>
-        var values = ["rock", "paper", "scissors"]
-
-        function getComputerChoice() {
-            valueToUse = values[Math.floor(Math.random() * values.length)];
-            return valueToUse
-        }
-
-        function playerChoice() {
-            let input = prompt("Please make your move (Rock, Paper or Scissors)")
-            let LowerInput = input.toLowerCase()
-            console.log
-            if (LowerInput == "rock" || LowerInput == "scissors" || LowerInput == "paper") {
-                return LowerInput
-            } else {
-                return playerChoice() 
-            }
-        }
-
-        function round(computerSelection, playerSelection) {
-            if (computerSelection == playerSelection) {
-                console.log(`The round is a draw! Both players drew ${computerSelection}`) 
-                return 0
-            } 
-            else if((playerSelection == "rock" && computerSelection == "scissors") ||
-            (playerSelection == "paper" && computerSelection == "rock") || 
-            (playerSelection == "scissors" && computerSelection == "paper") ) {
-                console.log(`You have won the round! ${playerSelection} beats ${computerSelection}`)
-                return 1
-            } else {
-                console.log(`You have lost the round! ${computerSelection} beats ${playerSelection}`)
-                return 2
-            }
-        }
-
-        function game() {
-            let playerScore = 0
-            let computerScore = 0  
-            for (let i = 0; i < 5; i++) {
-                let j = round(getComputerChoice(), playerChoice())
-                if (j == 1) {
-                    playerScore += 1
-                } else if (j == 2){
-                    computerScore += 1
-                }
-            }
-            if (playerScore == computerScore) {
-                console.log(`The game is a tie, both players got ${playerScore}`)
-            } else if(playerScore > computerScore) {
-                console.log(`You won the game, you got ${playerScore} points in total while the computer got ${computerScore} in total.`)
-            } else {
-                console.log(`You lost the game, you got ${playerScore} points in total while the computer got ${computerScore} in total.`)
-            }
-        }
+    <div id = "container">
+        <button type = "button" id = "rock"> Rock </button>
+        <button type = "button" id = "paper"> Paper </button>
+        <button type = "button" id = "scissors"> Scissors </button>
+    </div>
+    <h1 id = computer> ComputerScore: 00</h1>
+    <h1 id = player> PlayerScore: 00</h1>
+    <h1 id = game> </h1>
+    <script type = "text/javascript" src = "code.js">
 
     </script>
 </body>

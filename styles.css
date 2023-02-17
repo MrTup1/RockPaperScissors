@@ -1,0 +1,12 @@
+#container {
+    display:flex;
+    justify-content: space-around;
+}
+
+button{
+    height: 100px;
+    width: 100px;
+    background-color: #000080;
+    color:white;
+    border: 0;
+}
